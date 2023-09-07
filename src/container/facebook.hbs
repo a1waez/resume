@@ -1,0 +1,132 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div class="p-5">
+    <h1>{{name}}</h1>
+    <br>
+    <hr>
+    <br>
+    <div>
+        {{> title data="Users"}}
+        {{#each users}}
+        <section>
+            <strong>
+                {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                <br>
+                {{gender}}
+            </strong>
+        </section>
+        <br>
+        <div>
+            {{> title data="Friends"}}
+            {{#each friends}}
+            <section>
+                <strong>
+                    {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                    <br>
+                    {{gender}}
+                </strong>
+            </section>
+            <br>
+            <section>
+                {{> title data="Mutual friends"}}
+                {{#each mutual_friends}}
+                <section>
+                    <strong>
+                        {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                        <br>
+                        {{gender}}
+                    </strong>
+                </section>
+                <section>
+                    {{#if mutual_friends}}
+                    {{> title data="Mutual friends"}}
+                    {{#each mutual_friends}}
+                    <div>
+                        <strong>
+                            {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                            <br>
+                            {{gender}}
+                        </strong>
+                    </div>
+                    {{/each}}
+                    {{/if}}
+                </section>
+                {{/each}}
+            </section>
+            <br>
+            <div>
+                {{#if groups}}
+                {{> title data="Groups"}}
+                {{#each groups}}
+                <section>
+                    <strong>
+                        {{id}} . <button type="button" class="btn btn-link">{{name}}</button>
+                        <br>
+                        {{description}}
+                    </strong>
+                </section>
+                <br>
+                <div>
+                    <section>
+                        {{> title data="Members"}}
+                        {{#each members}}
+                        <section>
+                            <strong>
+                                {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                                <br>
+                                {{gender}}
+                            </strong>
+                        </section>
+                        {{/each}}
+                    </section>
+                </div>
+                {{/each}}
+                {{/if}}
+            </div>
+
+            {{/each}}
+        </div>
+        <br>
+        <div>
+            {{#if groups}}
+            {{> title data="Groups"}}
+            {{#each groups}}
+            <section>
+                <strong>
+                    {{id}} . <button type="button" class="btn btn-link">{{name}}</button>
+                    <br>
+                    <em>
+                        {{description}}
+                    </em>
+                </strong>
+            </section>
+            <br>
+            <section>
+                {{> title data="Members"}}
+                {{#each members}}
+                <section>
+                    <strong>
+                        {{id}} . <button type="button" class="btn btn-link">{{name}}</button> ({{age}})
+                        <br>
+                        {{gender}}
+                    </strong>
+                </section>
+                {{/each}}
+            </section>
+
+            {{/each}}
+            {{/if}}
+        </div>
+        {{/each}}
+    </div>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
