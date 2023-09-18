@@ -78,11 +78,13 @@
         {{#with table}}
         <section class="col-12">
             <table class="table">
-                <thead>
+               <thead>
                     <tr>
-                        <th>
-                            {{head}}
-                        </th>
+                        {{#each head}}
+                        <td>
+                            {{this}}
+                        </td>
+                        {{/each}}
                     </tr>
                 </thead>
                 {{#each user}}
@@ -205,28 +207,24 @@
     <hr>
     <br>
 
-    <div class="row">
+     <div class="row">
         {{#with footer}}
         <h5>{{title}}</h5>
-        {{#each navigation}}
-        <section class="col-3">
-
-            <div>
-                <button class="btn btn-link">{{text}}</button>
-            </div>
+        <div class="col-3">
+            {{#each navigation}}
+            <button class="btn btn-link">{{text}}</button>
             {{/each}}
+        </div>
+        <div class="col-3">
             {{#each socialMedia}}
-            <div>
-                <button class="btn btn-outline-dark">{{name}}</button>
-            </div>
+            <button class="btn btn-outline-dark">{{name}}</button>
             {{/each}}
+        </div>
+        <div class="col-3">
             {{#each partners}}
-            <div>
-                <button class="btn btn-outline-info">{{name}}</button>
-            </div>
-
-        </section>
-        {{/each}}
+            <button class="btn btn-outline-info">{{name}}</button>
+            {{/each}}
+        </div>
         {{/with}}
     </div>
 
