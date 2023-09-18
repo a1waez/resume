@@ -832,8 +832,145 @@ router.get('/task31', function (req, res) {
         ],
       },
     },
+    gallery: {
+      title: 'Picture history',
+      cards: [
+        {
+          name: 'The Mona Lisa',
+          items: [
+            'Painting',
+            'Oil on poplar panel',
+            '1503-1519',
+          ],
+        },
+        {
+          name: 'The Persistence of Memory',
+          items: ['Painting', 'Oil on canvas', '1931'],
+        },
+        {
+          name: 'The Starry Night',
+          items: ['Painting', 'Oil on canvas', '1889'],
+        },
+      ],
+    },
+    relaxion: {
+      title: 'Relax',
+      cards: [
+        {
+          header: 'Meditation',
+          title: 'The Benefits of Meditation',
+          description:
+            'Meditation can help reduce stress, anxiety, and depression, and improve overall well-being. Studies have also shown that regular meditation practice can enhance cognitive function and even boost the immune system.',
+        },
+        {
+          header: 'Hydration',
+          title: 'The Importance of Hydration',
+          description:
+            'Drinking enough water is essential for good health. Dehydration can lead to a range of symptoms, including fatigue, headaches, and constipation. It can also increase the risk of kidney stones and other health problems.',
+        },
+        {
+          header: 'Yoga',
+          title: 'The Benefits of Yoga',
+          description:
+            'Yoga can improve flexibility, strength, and balance, and help reduce stress and anxiety. It has also been shown to improve heart health and promote a sense of well-being.',
+        },
+        {
+          header: 'Sunscreen',
+          title: 'The Importance of Sunscreen',
+          description:
+            "Protecting your skin from the sun's harmful rays is crucial for reducing the risk of skin cancer and premature aging. Experts recommend using a broad-spectrum sunscreen with an SPF of at least 30 and reapplying every two hours.",
+        },
+      ],
+    },
+    rest: {
+      cards: [
+        {
+          header: 'Cooking',
+          title: 'The Joy of Cooking',
+          description:
+            'Cooking is a creative outlet that can bring people together over delicious food.',
+          button: 'Learn More',
+          footer: 'Photo by Brooke Lark on Unsplash',
+        },
+        {
+          header: 'Travel',
+          title: 'The Benefits of Traveling',
+          description:
+            'Traveling broadens your perspective, provides new experiences, and creates lasting memories.',
+          button: 'Explore',
+          footer: 'Photo by Sime Basioli on Unsplash',
+        },
+      ],
+    },
+    proposition: {
+      title: 'Proposition',
+      card: [
+        {
+          header: 'Our Approach',
+          title: 'Innovative Solutions for Your Business',
+          description:
+            'We create effective solutions that cater to your business needs.',
+        },
+        {
+          header: 'Our Expertise',
+          title: 'Trusted and Experienced Professionals',
+          description:
+            'Our team of experts delivers tailored strategies for best results.',
+        },
+      ],
+    },
+    footer: {
+      title: 'Navigation',
+      navigation: [
+        {
+          text: 'Home',
+          href: 'https://github.com/',
+        },
+        {
+          text: 'Contacts',
+          href: 'https://www.google.com/',
+        },
+        {
+          text: 'Help',
+          href: 'https://www.youtube.com/',
+        },
+      ],
+      socialMedia: [
+        {
+          name: 'Facebook',
+          link: 'https://www.facebook.com/',
+        },
+        {
+          name: 'Twitter',
+          link: 'https://twitter.com/',
+        },
+        {
+          name: 'Instagram',
+          link: 'https://www.instagram.com/',
+        },
+      ],
+      partners: [
+        {
+          name: 'Acme Inc.',
+          link: 'https://www.acme.com/',
+        },
+        {
+          name: 'Globex Corporation',
+          link: 'https://www.globex.com/',
+        },
+        {
+          name: 'Stark Industries',
+          link: 'https://www.starkindustries.com/',
+        },
+      ],
+    },
   })
-})
+  //                  ↑↑ сюди вводимо JSON дані
+}) 
+
+// ================================================================
+
+
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
 
