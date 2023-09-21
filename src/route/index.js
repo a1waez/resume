@@ -78,7 +78,7 @@ router.get('/summary', function (req, res) {
   })
 })
 
-  }) 
+  
 
 
 
@@ -602,9 +602,7 @@ router.get('/task21', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-  }) 
-})  
-  //
+ 
     
   
 
@@ -829,7 +827,12 @@ router.get('/task31', function (req, res) {
             name: 'Katherine',
             surname: 'Johnson',
             nickname: 'The Human Computer',
-
+          },
+        ],
+      },
+    },
+  })
+})
 
 router.get('/js', function (req, res) {
   // res.render генерує нам HTML сторінку
@@ -1254,7 +1257,7 @@ router.get('/program', function (req, res) {
           link: 'https://www.starkindustries.com/',
         },
       ],
-
+    },
   })
 })
 
