@@ -78,7 +78,7 @@ router.get('/summary', function (req, res) {
   })
 })
 
-  }) 
+
 
 
 
@@ -602,8 +602,7 @@ router.get('/task21', function (req, res) {
   //                  ↑↑ сюди вводимо JSON дані
 })
 
-  }) 
-})  
+
   //
     
   
@@ -724,7 +723,10 @@ router.get('/shoporder', function (req, res) {
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shoporder', {
     layout: 'shop',
+  })
+}) 
 
+// ================================================================
 router.get('/task31', function (req, res) {
   // res.render генерує нам HTML сторінку
 
@@ -800,8 +802,8 @@ router.get('/task31', function (req, res) {
           {
             text: 'Отримувати інформацію про знижки',
             isActive: true,
-
-      ],
+          },
+        ],
       button: {
         text: 'Lets start',
         href: 'https://nodejs.org/en/',
@@ -895,6 +897,13 @@ router.get('/task31', function (req, res) {
             name: 'Katherine',
             surname: 'Johnson',
             nickname: 'The Human Computer',
+          },
+        ],
+      },
+    },
+  } 
+  })
+})
 
 
 router.get('/js', function (req, res) {
@@ -1381,7 +1390,7 @@ router.get('/program', function (req, res) {
           'Обслуговування клієнтів',
         ],
       },
-    ]
+    },
 
     gallery: {
       title: 'Picture history',
@@ -1514,7 +1523,7 @@ router.get('/program', function (req, res) {
           link: 'https://www.starkindustries.com/',
         },
       ],
-
+    },
   })
 })
 
