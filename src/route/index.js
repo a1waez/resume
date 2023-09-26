@@ -808,7 +808,7 @@ router.get('/shoporder', function (req, res) {
 
         ],
 
-      ],
+      },
 
       button: {
         text: 'Lets start',
@@ -908,13 +908,11 @@ router.get('/shoporder', function (req, res) {
       },
     },
 
-  } 
   })
+}) 
 
-  },
-})
 
-})
+
 
 
 // ================================================================
