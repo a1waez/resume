@@ -1,0 +1,162 @@
+{{!--
+Це код container файлу для index сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+--}}
+
+<div class="p-5">
+    <h1>{{name}}</h1>
+    <br>
+    <em>
+        <strong>
+            {{description}}
+        </strong>
+    </em>
+    <br>
+    <div>
+        {{price}} ({{category}})
+    </div>
+
+    <button type="button" class="btn btn-primary">Купити</button>
+    <br>
+    <hr>
+    <br>
+    <div>
+        {{> title data="Features"}}
+        {{#with features}}
+        <section>
+            {{> title data="Processor"}}
+            {{#with processor}}
+            <section>
+                <strong>
+                    <button type="button" class="btn btn-link">{{brand}} {{model}}</button> ({{speed}})
+                    <br>
+                    {{cores}} , {{cache}}
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <section>
+            {{> title data="Memory"}}
+            {{#with memory}}
+            <section>
+                <strong>
+                    {{type}} {{size}} ({{speed}})
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <section>
+            {{> title data="Storage"}}
+            {{#with storage}}
+            <section>
+                <strong>
+                    {{type}} {{size}}
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <section>
+            {{> title data="Display"}}
+            {{#with display}}
+            <section>
+                <strong>
+                    {{size}} ({{resolution}} {{refresh_rate}})
+                    <br>
+                    {{technology}} , {{color_space}} , {{brightness}}
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <section>
+            {{> title data="Graphics"}}
+            {{#with graphics}}
+            <section>
+                <strong>
+                    {{brand}} {{model}}
+                    <br>
+                    {{memory}}
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <br>
+        <hr>
+        <br>
+        <section>
+            {{> title data="Ports"}}
+            {{#each ports}}
+            <div>
+                <strong>
+                    {{type}} ({{count}})
+                </strong>
+            </div>
+            <section>
+                <button type="button" class="btn btn-link">{{features}}</button>
+            </section>
+            {{/each}}
+        </section>
+        <section>
+            {{> title data="Battery"}}
+            {{#with battery}}
+            <section>
+                <strong>
+                    {{type}} ({{capacity}})
+                    <br>
+                    <em>
+                        {{life}}
+                    </em>
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <div>
+            {{weight}}
+        </div>
+        <br>
+        <section>
+            {{> title data="Dimensions"}}
+            {{#with dimensions}}
+            <section>
+                <strong>
+                    <ul>
+                        <li>
+                            {{height}}
+                        </li>
+                        <li>
+                            {{width}}
+                        </li>
+                        <li>
+                            {{depth}}
+                        </li>
+                    </ul>
+                </strong>
+            </section>
+            {{/with}}
+        </section>
+        <div>
+            <strong>
+                {{operating_system}}
+            </strong>
+        </div>
+
+        <div>
+            {{> title data="Accessories"}}
+            {{#each accessories}}
+            <section>
+                <strong>
+                    {{name}} <em>({{price}})</em>
+                </strong>
+            </section>
+            {{/each}}
+        </div>
+
+        {{/with}}
+    </div>
+</div>
+
+{{!--
+Цей код містить лише те, що буде виводитись в
+
+<body>
+    Адже наш layout/default.hbs має вже структуру HTML
+    --}}
