@@ -1,0 +1,60 @@
+<div class="card mb-3">
+    <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+    <div class="card-body">
+        <div>
+            {{#if isHot}}
+            <span class="badge text-bg-warning rounded-pill m-2">HOT!</span>
+            {{else}}
+
+            {{/if}}
+
+            {{#if isNew}}
+            <span class="badge text-bg-primary rounded-pill">Нове</span>
+            {{else}}
+
+            {{/if}}
+            <div>
+                {{#if isFast}}
+                <span class="badge text-bg-success mt-1">Швидка доставка</span>
+                {{else}}
+
+                {{/if}}
+                {{#if isFree}}
+                <span class="badge text-bg-secondary mt-1">Безкоштовна доставка</span>
+                {{else}}
+
+                {{/if}}
+            </div>
+        </div>
+        <h5 class="m-2">
+            {{name}}
+        </h5>
+        {{#with review}}
+        <p>{{amount}} {{text}}</p>
+        {{/with}}
+
+        <h3>{{price}}</h3>
+        <p class="mt-3">{{delivery}}</p>
+
+        {{#each buttons}}
+        {{#if isPrimary}}
+        <button class="btn btn-primary m-2">{{text}}</button>
+        {{else}}
+
+        {{/if}}
+        {{#if isSecondary}}
+        <button class="btn btn-secondary m-2">{{text}}</button>
+        {{else}}
+
+        {{/if}}
+        {{/each}}
+
+        {{#each characteristics}}
+        <ul>
+            <li>
+                <strong>{{title}}</strong> : {{value}}
+            </li>
+        </ul>
+        {{/each}}
+    </div>
+</div>
