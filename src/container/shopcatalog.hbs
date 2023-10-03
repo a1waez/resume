@@ -119,13 +119,15 @@
                         {{/each}}
                     </div>
                 </div>
-                {{/with}}
-
-                {{#each goodsList}}
-                <div class="col-4">
-                    {{>catalogItem}}
-                </div>
-                {{/each}}
+                {{/with}} 
+                
+                 <div class="col-8 row">
+                    {{#each goodsList}}
+                    <div class="col-6">
+                        {{>catalogItem}}
+                    </div>
+                    {{/each}}
+                 </div>
             </div>
         </div>
     </div>
