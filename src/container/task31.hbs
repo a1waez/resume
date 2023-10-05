@@ -7,15 +7,23 @@
                     <tr>
                         {{#each links}}
                         <th>
+
+                            <button class="btn btn-link"><a href="{{href}}">{{text}}</a></button>
+
                             <button class="btn btn-link">{{text}}</button>
+
 
                         </th>
                         {{/each}}
                         {{#with button}}
                         <th>
+ 
+                            <button class="btn btn-primary" href="{{href}}">{{text}}</button>
+
                             <button class="btn btn-primary">{{text}}
 
                             </button>
+ 
                         </th>
                         {{/with}}
                     </tr>
@@ -80,6 +88,13 @@
             <table class="table">
                 <thead>
                     <tr>
+ 
+                        {{#each head}}
+                        <td>
+                            {{this}}
+                        </td>
+                        {{/each}}
+
                         <th>
                             {{head}}
                         </th>
@@ -200,7 +215,6 @@
         {{/with}}
     </div>
 
-
     <br>
     <hr>
     <br>
@@ -208,6 +222,24 @@
     <div class="row">
         {{#with footer}}
         <h5>{{title}}</h5>
+        <div class="col-3">
+            {{#each navigation}}
+            <button class="btn btn-link">{{text}}</button>
+            {{/each}}
+        </div>
+        <div class="col-3">
+            {{#each socialMedia}}
+            <button class="btn btn-outline-dark">{{name}}</button>
+            {{/each}}
+        </div>
+        <div class="col-3">
+            {{#each partners}}
+            <button class="btn btn-outline-info">{{name}}</button>
+            {{/each}}
+        </div>
+        {{/with}}
+    </div>
+
         {{#each navigation}}
         <section class="col-3">
 
@@ -229,7 +261,4 @@
         {{/each}}
         {{/with}}
     </div>
-
-
-
 </main>
