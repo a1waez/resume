@@ -1,0 +1,164 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+<main class="p-5">
+    <hr class="m-2">
+    <div class="row">
+        <div class="col-12 mb-5">
+            <div class="nav nav-tabs">
+                {{#with navigation}}
+                {{#each links}}
+                <div class="nav-item">
+                    <a href="#" class="nav nav-link">{{text}}</a>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-4">
+        {{#with header}}
+        <h1>
+            <i class="fa-solid fa-cart-shopping" style="color: #678379;"></i>
+            {{title}}
+        </h1>
+        {{#with button}}
+        <button class="btn btn-outline-warning">{{text}}</button>
+        {{/with}}
+        {{/with}}
+    </div>
+
+    <hr class="m-2">
+
+
+
+    {{#each goodsBlock}}
+    <div class="p-1 card my-3">
+        <div class="row">
+
+            <img class="col-2" src="https://picsum.photos/110/110" alt="Product photo">
+            <div class="col-6">
+                <p class="h3">{{name}}</p>
+                <p>{{description}}</p>
+            </div>
+            <div class="col-1 pt-3">
+                {{#with price}}
+                <p class="">{{title}} : {{value}}</p>
+
+                {{/with}}
+            </div>
+            <div class="col-1 pt-5">{{amount}}</div>
+
+
+            <div class="col-2">
+                {{#each buttons}}
+                <div class="row m-2">
+                    <button class="{{#if isPrimary}} btn btn-primary {{/if}} 
+                {{#if isDanger}} btn btn-outline-danger {{/if}}">{{text}}
+                    </button>
+                </div>
+
+                {{/each}}
+            </div>
+        </div>
+    </div>
+    {{/each}}
+
+
+    <hr class="m-2">
+
+    <div class="m-3">
+        {{#with total}}
+        <h2>
+            <i class="fa-solid fa-globe" style="color: #0010f5;"></i>
+            {{title}}
+        </h2>
+        <h1>{{amount}}</h1>
+        <p>{{delivery}}</p>
+        {{#each buttons}}
+        <div class="m-2">
+
+            {{#if isSuccess}}
+            <button class="btn btn-success">{{text}}</button>
+            {{else}}
+
+            {{/if}}
+
+            {{#if isOutline}}
+            <button class="btn btn-outline-success">{{text}}</button>
+            {{else}}
+
+            {{/if}}
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+
+    <hr class="m-2">
+
+    <div class="row m-5">
+        {{#with goodsOtherBlock}}
+        <h1 class="text-center">
+            {{title}}
+            <i class="fa-solid fa-eye fa-bounce"></i>
+        </h1>
+        {{#each cards}}
+        <div class="col-4 mb-5">
+            <div class="card">
+                <img class="card-img-top" src="https://picsum.photos/400/200" alt="Product photo">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        {{title}}
+                        <div>
+                            {{#if isHot}}
+                            <span class="badge text-bg-warning rounded-pill">HOT!</span>
+                            {{else}}
+
+                            {{/if}}
+
+                            {{#if isNew}}
+                            <span class="badge text-bg-primary rounded-pill">Нове</span>
+                            {{else}}
+
+                            {{/if}}
+                        </div>
+                    </h5>
+                    <p>{{description}}</p>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+        {{/with}}
+    </div>
+
+    <hr class="m-2">
+
+    <div class="row m-5">
+        {{#with subscribe}}
+        <div class="col-12">
+            <div class="card text-bg-dark">
+                <div class="card-body">
+                    <h2 class="card-title">
+                        {{header}}
+                        <i class="fa-solid fa-key fa-beat"></i>
+                    </h2>
+                    <p>{{description}}</p>
+                    {{#each buttons}}
+                    <div class="mb-3">
+                        <button class="btn btn-primary">{{text}}</button>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/with}}
+    </div>
+</main>
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

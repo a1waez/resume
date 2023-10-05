@@ -1,0 +1,140 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+<div>
+    {{#with web}}
+    <div>
+        {{#each languages}}
+        <div>
+            <strong>
+                {{name}}
+            </strong>
+            ({{version}})
+            <p>
+                <em>
+                    <strong>
+                        {{description}}
+                    </strong>
+                </em>
+            </p>
+        </div>
+        <section>
+            {{#if elements}}
+            {{>title data="Elements"}}
+            {{#each elements}}
+            <div>
+                <strong>
+                    {{name}}
+                </strong>
+                --
+                <em>
+                    {{description}}
+                </em>
+            </div>
+
+            <br>
+
+            <section>
+                {{#if attributes}}
+                {{>title data="Attributes"}}
+                {{#each attributes}}
+                <div>
+                    <strong>
+                        {{name}}
+                    </strong>
+                    --
+                    <em>
+                        {{description}}
+                    </em>
+                </div>
+                {{/each}}
+                {{/if}}
+            </section>
+            {{/each}}
+            {{/if}}
+        </section>
+
+        <section>
+            {{#if properties}}
+            {{> title data="Properties"}}
+            <div>
+                {{#each properties}}
+                <div>
+                    <br>
+                    <strong>
+                        {{name}}
+                    </strong>
+                    --
+                    <em>
+                        {{description}}
+                    </em>
+                </div>
+                <br>
+                <section>
+                    {{> title data="Values"}}
+                    {{#each values}}
+                    <div>
+                        <strong>
+                            {{value}}
+                        </strong>
+                        --
+                        <em>
+                            {{description}}
+                        </em>
+                    </div>
+                    {{/each}}
+                </section>
+                {{/each}}
+            </div>
+            {{/if}}
+        </section>
+        <section>
+            {{#if functions}}
+            {{> title data="Functions"}}
+            <div>
+                {{#each functions}}
+                <div>
+                    <br>
+                    <strong>
+                        {{name}}
+                    </strong>
+                    --
+                    <em>
+                        {{description}}
+                    </em>
+                </div>
+                <section>
+                    {{> title data="Parameters"}}
+                    {{#each parameters}}
+                    <div>
+                        <strong>
+                            {{name}}
+                        </strong>
+                        ({{type}})
+                        <br>
+                        <em>
+                            {{description}}
+                        </em>
+                    </div>
+                    {{/each}}
+                </section>
+                {{/each}}
+                {{/if}}
+        </section>
+        <br>
+        <hr>
+        <br>
+        {{/each}}
+    </div>
+    {{/with}}
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

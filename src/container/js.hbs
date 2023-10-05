@@ -1,0 +1,101 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+
+<div class="p-5">
+    <h1>{{name}}</h1>
+    <em>
+        <strong>"{{description}}"</strong>
+    </em>
+    <br>
+    <hr>
+    <br>
+    <div>
+        {{> title data="History"}}
+        <section>
+            {{#with history}}
+            <div>
+                {{year}}
+                <br>
+                {{founder}}
+            </div>
+            {{/with}}
+        </section>
+    </div>
+    <br>
+    <div>
+        {{> title data="Types"}}
+        <section>
+            <button type="button" class="btn btn-link">{{types}}</button>
+        </section>
+    </div>
+    <div>
+        {{> title data="Syntax"}}
+        <section>
+            <ul>
+                {{#with syntax}}
+                <li>
+                    {{variables}}
+                </li>
+                <li>
+                    {{functions}}
+                </li>
+                <li>
+                    {{conditionals}}
+                </li>
+                <li>
+                    {{loops}}
+                </li>
+                <li>
+                    {{classes}}
+                </li>
+                {{/with}}
+            </ul>
+        </section>
+    </div>
+    <br>
+    <div>
+        {{> title data="Features"}}
+        <section>
+            <button type="button" class="btn btn-link">{{features}}</button>
+        </section>
+    </div>
+    <br>
+    <div>
+        {{> title data="Libraries"}}
+        <section>
+            <button type="button" class="btn btn-link">{{libraries}}</button>
+        </section>
+    </div>
+    <br>
+    <div>
+        {{> title data="Tools"}}
+        <section>
+            <button type="button" class="btn btn-link">{{tools}}</button>
+        </section>
+    </div>
+    <div>
+        {{> title data="Community"}}
+        <section>
+            <ul>
+                {{#each community}}
+                <li>
+                    <div>
+                        {{name}} ({{type}})
+                    </div>
+                </li>
+                {{/each}}
+            </ul>
+
+        </section>
+    </div>
+</div>
+
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
