@@ -1,8 +1,8 @@
+
 {{!--
 Це код container файлу для summary сторінки,
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 --}}
-
 
 <main class="p-5">
     <hr class="m-2">
@@ -157,8 +157,24 @@
         </div>
         {{/with}}
     </div>
+
 </main>
 {{!--
 Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
 Адже наш layout/default.hbs має вже структуру HTML
 --}}
+
+
+    <hr class="m-2">
+
+    <div class="nav">
+        {{#each footer}}
+        <div class="nav-item">
+            {{#each this}}
+            <a href="#" class="nav nav-link">{{text}}</a>
+            {{/each}}
+        </div>
+        {{/each}}
+    </div>
+
+</main>

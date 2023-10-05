@@ -20,11 +20,17 @@
 	<link href='css/style.css' rel='stylesheet' />
 </head>
 
-<body class="p-5">
+<body>
 	{{> nav}}
 	<hr>
+ 
 	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}} {{{body}}}
 
+
+	{{! ↓ ця кострукція показує куди шаблонізатору треба вставляти код з container файлу --}}
+	{{{body}}}
+	<hr>
+ 
 	{{#with footer}}
 	<footer>
 		<div>

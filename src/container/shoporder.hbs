@@ -46,28 +46,44 @@
                 {{#with form}}
                 {{#with input}}
                 {{#with surname}}
+
                 <div class="col-6 p-2">
+
+                <div class="col-4 p-2">
+
                     <label class="form-label">{{label}}</label>
                     <input class="form-control" {{placeholder}}>
                     <div class="form text">{{caption}}</div>
                 </div>
                 {{/with}}
                 {{#with name}}
+
                 <div class="col-6 p-2">
+
+                <div class="col-4 p-2">
+
                     <label class="form-label">{{label}}</label>
                     <input class="form-control" {{placeholder}}>
                     <div class="form text">{{caption}}</div>
                 </div>
                 {{/with}}
                 {{#with phone}}
+
                 <div class="col-6 p-2">
+
+                <div class="col-4 p-2">
+
                     <label class="form-label">{{label}}</label>
                     <input class="form-control" {{placeholder}}>
                     <div class="form text">{{caption}}</div>
                 </div>
                 {{/with}}
                 {{#with email}}
+
                 <div class="col-6 p-2">
+
+                <div class="col-4 p-2">
+
                     <label class="form-label">{{label}}</label>
                     <input class="form-control" {{placeholder}}>
                     <div class="form text">{{caption}}</div>
@@ -97,6 +113,7 @@
             <div>
                 <hr>
             </div>
+
         </div>
         <div class="col-4">
             <div class="card">
@@ -164,6 +181,74 @@
                         {{#if isOutline}}
                         <button class="btn btn-outline-primary">{{text}}</button>
                         {{else}}
+
+            <div class="col-4">
+                <div class="card">
+                    {{#each action_block}}
+                    <div class="p-1">
+                        {{#if isSuccess}}
+                        <button class="btn btn-success">{{text}}</button>
+                        {{else}}
+
+                        {{/if}}
+                        {{#if isDanger}}
+                        <button class="btn btn-danger">{{text}}</button>
+                        {{else}}
+
+                        {{/if}}
+                        {{#if isInfo}}
+                        <button class="btn btn-info">{{text}}</button>
+                        {{else}}
+
+                        {{/if}}
+                    </div>
+                    {{/each}}
+                </div>
+
+                <div class="card">
+                    {{#with total}}
+                    <h1>{{title}}</h1>
+                    <div class="p-1">
+                        {{#each item_list}}
+                        <span>{{name}} : {{price}}</span>
+                        {{/each}}
+                    </div>
+
+                    <div>
+                        <hr>
+                    </div>
+
+                    <div class="p-1">
+                        {{#each additional_info}}
+                        <span>{{text}} : {{value}}</span>
+                        {{/each}}
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+
+                    <div class="p-1">
+                        {{#with total_price}}
+                        <span>{{text}} : {{value}}</span>
+                        {{/with}}
+                    </div>
+                    <div>
+                        <hr>
+                    </div>
+                    <div>
+                        {{#each button}}
+                        <div class="p-1">
+
+                            {{#if isPrimary}}
+                            <button class="btn btn-primary">{{text}}</button>
+                            {{else}}
+
+                            {{/if}}
+
+                            {{#if isOutline}}
+                            <button class="btn btn-outline-primary">{{text}}</button>
+                            {{else}}
+
 
                         {{/if}}
                     </div>
